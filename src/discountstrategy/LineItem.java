@@ -12,27 +12,28 @@ package discountstrategy;
 public class LineItem {
 
     private Product product;
-    private double subtotal;
+    private int qty;
 
-    public LineItem(Product product) {
+    public LineItem(Product product, int qty) {
         this.product = product;
+        this.qty = qty;
     }
 
     public LineItem() {
     }
 
-    public double getSubTotal(int qty) {
-        subtotal = product.getDiscountProductTotal(qty);
-        return subtotal;
+    final public double getSubTotal(int qty) {
+        return product.getDiscountProductTotal(qty);
+        
     }
     
     
     
     // Class Testing 
     public static void main(String[] args) {
-        Product product = new Product("100", "Hat", 20.00, new QtyDiscount(.10, 2));
-        LineItem lineitem = new LineItem(product);
-        double subtotal = lineitem.getSubTotal(2);
+        Product product = new Product("100", "Hat", 20.00, new QtyDiscount(.10, 5));
+        LineItem lineitem = new LineItem(product, 5);
+        double subtotal = lineitem.getSubTotal(lineitem.qty);
         System.out.println(subtotal);
     }
 }

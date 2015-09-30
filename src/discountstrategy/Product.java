@@ -29,11 +29,11 @@ public class Product {
     }
 
     //methods
-    public double getAmountSaved(int qty) {
+    final public double getAmountSaved(int qty) {
         return discount.getAmountSaved(unitPrice, qty);
     }
 
-    public double getDiscountProductTotal(int qty) {
+    final public double getDiscountProductTotal(int qty) {
         return discount.getDiscountProductTotal(unitPrice, qty);
     }
 

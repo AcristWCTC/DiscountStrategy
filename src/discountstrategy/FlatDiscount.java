@@ -9,26 +9,26 @@ package discountstrategy;
  *
  * @author Adam
  */
-public class NoDiscount implements DiscountStrategy {
+public class FlatDiscount implements DiscountStrategy {
 
     //properties
     private double discountRate;
 
     //constructors
-    public NoDiscount(double discountRate) {
+    public FlatDiscount(double discountRate) {
         this.discountRate = discountRate;
     }
 
     //methods
     @Override
     final public double getDiscountProductTotal(double unitPrice, int qty) {
-            return unitPrice * qty;
+            return unitPrice * qty - discountRate;
     }
         
 
     @Override
     final public double getAmountSaved(double unitPrice, int qty) {
-            return 0;
+            return discountRate;
     }
     
 

@@ -21,12 +21,12 @@ public class PercentOffDiscount implements DiscountStrategy {
     
     //methods
     @Override
-    public double getAmountSaved(double unitPrice, int qty) {
+    final public double getAmountSaved(double unitPrice, int qty) {
         return unitPrice * qty * discountRate;
     }
 
     @Override
-    public double getDiscountProductTotal(double unitPrice, int qty) {
+    final public double getDiscountProductTotal(double unitPrice, int qty) {
         return (unitPrice * qty) - getAmountSaved(unitPrice, qty);
     }
 
