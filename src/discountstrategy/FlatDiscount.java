@@ -13,6 +13,7 @@ public class FlatDiscount implements DiscountStrategy {
 
     //properties
     private double discountRate;
+    private double qty;
 
     //constructors
     public FlatDiscount(double discountRate) {
@@ -20,15 +21,12 @@ public class FlatDiscount implements DiscountStrategy {
     }
 
     //methods
-    @Override
-    final public double getDiscountProductTotal(double unitPrice, int qty) {
-            return unitPrice * qty - discountRate;
-    }
         
 
     @Override
     final public double getAmountSaved(double unitPrice, int qty) {
-            return discountRate;
+        
+            return Math.abs(discountRate * qty);
     }
     
 

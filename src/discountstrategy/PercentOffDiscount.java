@@ -25,10 +25,6 @@ public class PercentOffDiscount implements DiscountStrategy {
         return unitPrice * qty * discountRate;
     }
 
-    @Override
-    final public double getDiscountProductTotal(double unitPrice, int qty) {
-        return (unitPrice * qty) - getAmountSaved(unitPrice, qty);
-    }
 
     // getters and setters
     @Override
@@ -43,7 +39,7 @@ public class PercentOffDiscount implements DiscountStrategy {
 
 // Class Testing 
 //    public static void main(String[] args) {
-//        DiscountStrategy discount = new QtyDiscount(.10, 5);
+//        DiscountStrategy discount = new PercentOffDiscount(.10);
 //        double amt = discount.getAmountSaved(10, 2);
 //        System.out.println("Amount Saved: $" + amt);
 //        double newTotal = discount.getDiscountProductTotal(10, 2);

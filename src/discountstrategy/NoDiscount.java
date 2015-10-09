@@ -15,15 +15,10 @@ public class NoDiscount implements DiscountStrategy {
     private double discountRate;
 
     //constructors
-    public NoDiscount(double discountRate) {
-        this.discountRate = discountRate;
+    public NoDiscount() {
     }
 
     //methods
-    @Override
-    final public double getDiscountProductTotal(double unitPrice, int qty) {
-            return unitPrice * qty;
-    }
         
 
     @Override

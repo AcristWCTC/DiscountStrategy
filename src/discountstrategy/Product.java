@@ -16,6 +16,7 @@ public class Product {
     private String name;
     private double unitPrice;
     private DiscountStrategy discount;
+    private int qty;
 
     //constructors
     public Product() {
@@ -26,15 +27,12 @@ public class Product {
         this.name = name;
         this.unitPrice = unitPrice;
         this.discount = discount;
+        this.qty = qty;
     }
 
     //methods
     final public double getAmountSaved(int qty) {
         return discount.getAmountSaved(unitPrice, qty);
-    }
-
-    final public double getDiscountProductTotal(int qty) {
-        return discount.getDiscountProductTotal(unitPrice, qty);
     }
 
     // getters and setters
@@ -72,7 +70,7 @@ public class Product {
 
     // Class Testing 
 //    public static void main(String[] args) {
-//        Product product = new Product("100", "Hat", 20.00, new QtyDiscount(.10, 2));
+//        Product product = new Product("100", "Hat", 20.00, new PercentOffDiscount(.10));
 //        double amtSaved = product.getAmountSaved(2);
 //        System.out.println("Amount Saved: $" + amtSaved);
 //    }

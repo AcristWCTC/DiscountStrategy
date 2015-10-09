@@ -11,11 +11,23 @@ package discountstrategy;
  */
 public class Start {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        Register r = new Register();
+        
+        // Customer #1 sale
+        r.startNewSale("100", new FakeDatabase(), new ReceiptOutputConsole());
+        r.addItemToSale("B100", 2);
+        r.addItemToSale("A100", 1);
+        r.endSale();
+        
+        // Customer #2 sale
+        r.startNewSale("101", new FakeDatabase(), new ReceiptOutputConsole());
+        r.addItemToSale("C100", 4);
+        r.addItemToSale("D100", 6);
+        r.endSale();
+        
+        
+
     }
-    
 }

@@ -20,16 +20,9 @@ public class QtyDiscount implements DiscountStrategy {
         this.discountRate = discountRate;
         this.minQty = minQty;
     }
+    
 
     //methods
-    @Override
-    final public double getDiscountProductTotal(double unitPrice, int qty) {
-        if (qty >= minQty) {
-            return (unitPrice * qty) - getAmountSaved(unitPrice, qty);
-        } else {
-            return unitPrice * qty;
-        }
-    }
 
     @Override
     final public double getAmountSaved(double unitPrice, int qty) {
